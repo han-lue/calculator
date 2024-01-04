@@ -2,17 +2,16 @@
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="styles.css"/>
+        <link rel="icon" type="image/svg+xml" href="icon.svg">
         <title>Calculator</title>
+        <script type="text/javascript" src="script.js"></script>
     </head>
 
     <body>
-
-        <script type="text/javascript" src="script.js"></script>
-
         <div class="container">
 
             <div class="result-container">
-                <h1><b id="result">s</b></h1>
+                <h1><b id="result"></b></h1>
             </div>
 
             <div class="grid-container">
@@ -25,7 +24,7 @@
                 <button class="lightGray" onclick="handleNumberPress(7)">7</button>
                 <button class="lightGray" onclick="handleNumberPress(8)">8</button>
                 <button class="lightGray" onclick="handleNumberPress(9)">9</button>
-                <button class="orange" onclick="handleOperationPress('x')">X</button>
+                <button class="orange" onclick="handleOperationPress('x')">x</button>
                 
                 <button class="lightGray" onclick="handleNumberPress(4)">4</button>
                 <button class="lightGray" onclick="handleNumberPress(5)">5</button>
@@ -39,10 +38,9 @@
 
                 <button class="lightGray" onclick="handleNumberPress(0)">0</button>
                 <button class="lightGray" onclick="handleNumberPress('.')">.</button>
-                <button class="lightGray">C</button>
+                <button class="lightGray" onclick="handleBackspace()">C</button>
                 <button class="orange" onclick="getResult()">=</button>
             </div>
         </div>  
-
     </body>
 </html>
