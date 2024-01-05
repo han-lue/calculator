@@ -9,8 +9,8 @@ button {
     color: white;
     border-radius: 100%;
     border: 0px;
-    padding: 5px;
-    font-size: 16px;
+    min-width: 90px;
+    font-size: x-large;
     font-weight: bold;
     aspect-ratio: 1;
 }
