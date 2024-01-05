@@ -1,35 +1,35 @@
 let result = null;
-let firstNumber = "";
-let secondNumber = "";
+let numberX = "";
+let numberY = "";
 let operation;
 
 function clearAll(){
     setResultScreen("");
     result = null;
-    firstNumber = "";
-    secondNumber = "";
+    numberX = "";
+    numberY = "";
     operation = "";
 }
 
 function handleNumberPress(num) {
-    firstNumber += num;
-    setResultScreen(firstNumber);
+    numberX += num;
+    setResultScreen(numberX);
 }
 
 function handleBackspace() {
-    firstNumber = firstNumber.slice(0, -1);
-    setResultScreen(firstNumber);
+    numberX = numberX.slice(0, -1);
+    setResultScreen(numberX);
 }
 
 function handleOperationPress(opr) {
     if (result === null) {
         operation = opr;
-        secondNumber = firstNumber;
-        firstNumber = ""; 
+        numberY = numberX;
+        numberX = ""; 
         setResultScreen(operation);
     } else {
-        secondNumber = result;
-        firstNumber = "";
+        numberY = result;
+        numberX = "";
         operation = opr;
         result = null;
         setResultScreen(operation); 
@@ -42,41 +42,33 @@ function setResultScreen(text) {
 }
 
 function getResult() {
-    let textField;
     switch (operation) {
         case "+":   
-            result = Math.round((parseFloat(secondNumber) + parseFloat(firstNumber)) * 100) / 100;
+            result = Math.round((parseFloat(numberY) + parseFloat(numberX)) * 100) / 100;
             setResultScreen(result); 
             break;
         case "-":
-            result = Math.round((parseFloat(secondNumber) - parseFloat(firstNumber)) * 100) / 100;
+            result = Math.round((parseFloat(numberY) - parseFloat(numberX)) * 100) / 100;
             setResultScreen(result); 
             break;
         case "x": 
-            result = Math.round((parseFloat(secondNumber) * parseFloat(firstNumber)) * 100) / 100;
+            result = Math.round((parseFloat(numberY) * parseFloat(numberX)) * 100) / 100;
             setResultScreen(result);
             break;
         case "/":
-            result = Math.round((parseFloat(secondNumber) / parseFloat(firstNumber)) * 100) / 100;
+            result = Math.round((parseFloat(numberY) / parseFloat(numberX)) * 100) / 100;
             setResultScreen(result);
             break;
         case "+/-":
-            result = Math.round((parseFloat(secondNumber) * -1) * 100) / 100;
+            result = Math.round((parseFloat(numberY) * -1) * 100) / 100;
             setResultScreen(result);
             break;   
         case "%":
-            result = Math.round((parseFloat(secondNumber) / 100) * 100) / 100;
+            result = Math.round((parseFloat(numberY) / 100) * 100) / 100;
             setResultScreen(result); 
             break;   
         default: 
             clearAll();
             break;        
     }
-
-    
 }
-
-
-//to do
-// improve ui in general + fix the button sizes, currently some are larger
-// add function to use operations on the result
