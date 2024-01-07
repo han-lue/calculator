@@ -10,7 +10,7 @@ button {
     border-radius: 100%;
     border: 0px;
     min-width: 90px;
-    font-size: x-large;
+    font-size: 20px;
     font-weight: bold;
     aspect-ratio: 1;
 }
@@ -72,3 +72,21 @@ button:hover {
 .darkGray:active {
     background-color: slateblue;
 }
+
+@media screen and (max-width: 400px) {
+    .container {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .grid-container {
+        width: 100%;
+        
+    }
+
+    button {
+        min-width: 60px;
+        max-width: 90px;
+        font: 30px;
+    }
+  }
